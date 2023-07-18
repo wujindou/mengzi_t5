@@ -26,8 +26,8 @@ class DataCollatorForSeq2Seq:
 
 
   def preprocess(self, item):
-      source = item["text"]
-      target = item["entities"]
+      source = '请根据问题和文章从文章中抽取回答问题的相关内容并添加引用文章。输入'+item['question']+';文章：'+item['context'].replace(' ','')+'##回答:'
+      target = item["answer"]
       return source, target
 
   def collator_fn(self, batch):
