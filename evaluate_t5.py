@@ -32,7 +32,7 @@ def inference_with_file(dataset,batch_size=8):
       results.extend(batch_preds)
     return results
 
-dev_data = json.load(open('./dev_webcpm.json','r',encoding='utf-8'))[:5]
+dev_data = json.load(open('./dev_webcpm.json','r',encoding='utf-8'))
 preds = inference_with_file(dev_data)
 targets = [d['answer'] for d in dev_data]
 print(preds[0]+'\t'+targets[0])
