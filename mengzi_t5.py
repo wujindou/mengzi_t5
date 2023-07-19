@@ -14,8 +14,8 @@ np.random.seed(seed)
 torch.backends.cudnn.benchmark = True
 torch.backends.cudnn.deterministic = True
 
-train_data = json.load(open('./train_webcpm.json','r',encoding='utf-8'))
-dev_data = json.load(open('./dev_webcpm.json','r',encoding='utf-8'))
+train_data = json.load(open('./train_webcpm.json','r',encoding='utf-8'))[:100]
+dev_data = json.load(open('./dev_webcpm.json','r',encoding='utf-8'))[:5]
 from transformers import T5Tokenizer, T5ForConditionalGeneration, TrainingArguments, Trainer
 model_path = "Langboat/mengzi-t5-base" # huggingface下载模型
 Mengzi_tokenizer = T5Tokenizer.from_pretrained(model_path)
