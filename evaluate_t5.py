@@ -20,7 +20,7 @@ def inference_with_file(dataset,batch_size=8):
     results =[]
     batch_data = []
     for idx,data in enumerate(dataset):
-      batch_data.append('请根据问题和文章从文章中抽取回答问题的相关内容并添加引用文章。输入'+data['question']+';文章：'+data['context'])
+      batch_data.append('请根据问题和文章从文章中抽取回答问题的相关内容并添加引用文章。输入'+data['question']+';文章：'+data['context']+'##回答:')
       if len(batch_data)==batch_size:
           # print(batch_data)
           # sys.exit(1)
